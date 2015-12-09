@@ -67,7 +67,7 @@ module.exports = ColorConverter =
         else
           color = [0, 0, 0]
 
-        return 'rgba(' + color + ', 1)' + semis
+        return semis
 
     componentToHex: (c) ->
         c = new Number(c)
