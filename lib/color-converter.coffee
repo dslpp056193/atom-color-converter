@@ -37,12 +37,12 @@ module.exports = ColorConverter =
 
          rgbarr = rgb.split(',')
 
-         color =  "#" + this.componentToHex(rgbarr[0]) + this.componentToHex(rgbarr[1]) + this.componentToHex(rgbarr[2]) + semis
+         color =  "#" + this.componentToHex(rgbarr[0]) + this.componentToHex(rgbarr[1]) + this.componentToHex(rgbarr[2])
 
          if color[1] == color[2] &&  color[3] == color[4] &&  color[5] == color[6]
              color = color.substr(0,2) + color[3] + color[5]
 
-         return color
+         return color + semis
 
     hex2rgba: (color) ->
         semis = '';
@@ -50,7 +50,9 @@ module.exports = ColorConverter =
         if color.indexOf(';') != -1
             semis = ';'
 
-        color = color.replace /#/, ''
+        color = color.replace(///\s*///g, '')
+        color = color.replace(';', '')
+        color = color.replace('#', '')
 
         if color.length is 3
           color = [
@@ -67,7 +69,7 @@ module.exports = ColorConverter =
         else
           color = [0, 0, 0]
 
-        return semis
+        return 'rgba(' + color + ', 1)' + semis
 
     componentToHex: (c) ->
         c = new Number(c)
