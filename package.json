@@ -1,7 +1,7 @@
 {
   "name": "color-converter",
   "main": "./lib/color-converter",
-  "version": "1.4.0",
+  "version": "1.0",
   "description": "Select RGB/RGBA/HEX color, hit the hotkey and get HEX/HEX/RGB!",
   "keywords": ["hex", "rgb", "rgba", "color", "convert"],
   "activationCommands": {

@@ -7,5 +7,4 @@ For use this plugin, add in keymap config next lines:
 
 Then select RGB/RGBA/HEX color, hit the hotkey 'ctrl-shift-c' and get a result!
 
-#![A screenshot of your package]()
-# atom-color-converter 
+# atom-color-converter
